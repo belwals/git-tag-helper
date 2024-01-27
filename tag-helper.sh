@@ -37,7 +37,7 @@ get_last_git_commits_hash() {
 }
 
 generate_new_version() {
-   version=$(date -d "$LAST_COMMIT_TSP"  +'%Y%m%d%H%M%S')
+   version=$(date +"%Y-%m-%dT%H:%M:%S" $LAST_TIME_STAMP)
    if [ "$CURRENT_BRANCH" == "main" ] || [ "$CURRENT_BRANCH" == "master" ]
    then
       # echo "Performing things for master branch"
@@ -58,8 +58,8 @@ process_tagging_with_the_version() {
 }
 
 main() {
-  startTime=$(date)
-   echo "Process to generate a new version is started : $(date -d "$startTime"  +'%d/%m/%Y %H:%M:%S')"
+  startTime=$( date +"%Y-%m-%dT%H:%M:%S")
+   echo "Process to generate a new version is started : $startTime"
    
    # Checking the branch status 
    identify_branch_name
@@ -83,8 +83,8 @@ main() {
       process_tagging_with_the_version "$VERSION"
    fi
 
-   endTime=$(date)
-   echo "Process to generate a new version is completed: $(date -d "$endTime"  +'%d/%m/%Y %H:%M:%S')"
+   endTime=$(date +"%Y-%m-%dT%H:%M:%S")
+   echo "Process to generate a new version is completed: $endTime"
 }
 
 #Parsing the supplied arguments
