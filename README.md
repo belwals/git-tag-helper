@@ -1,6 +1,6 @@
 ## Git Tag Helper
 
-This Bash script simplifies the git tagging process by providing an easy-to-use command for generating and pushing tags to the remote repository. The script enhances efficiency by utilizing the last git commit timestamp for generating the git tag. Additionally, if the current branch is not the main or master branch, it includes the branch name in the generated tag.
+This shell script simplifies the git tagging process by providing an easy-to-use command for generating and pushing tags to the remote repository. The script enhances efficiency by utilizing the last git commit timestamp for generating the git tag. Additionally, if the current branch is not the main or master branch, it includes the branch name in the generated tag.
 
 ## Features
   * Tag Generation:
