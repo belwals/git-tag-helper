@@ -1,12 +1,13 @@
 #!/bin/sh
-#This script is created and manage by @Saurabh Belwal
-# Script takes care of generating ci/cd supported environment variables
-# Tagging approach
-# Pre-requisites valid git repository
-# Logic : to create tag
-# if branch is main/master then based on last git commit timestamp it will create version using format i.e. yyyymmddhhmmss.<commit_hash>
-# For feature branch (other than main/master) in format : yyyymmddhhmmss.<commit_hash>-<branch_name>
-
+# This script generates a version number based on the current Git commit and optionally tags the current commit.
+#
+# Prerequisites:
+#   - A valid Git repository otherwise it will be generating with Default hash
+#
+# Usage:
+#   - `./version_script.sh`: Generates a version number and prints it to the console.
+#   - `./version_script.sh -t`: Generates a version number and tags the current commit with that version.
+#   - `./version_script.sh -h`: Displays help information.
 DEFAULT_VERSION="00000.0"
 LAST_COMMIT_TSP=""
 

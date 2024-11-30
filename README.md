@@ -1,32 +1,28 @@
-## Git Tag Helper
+# Auto-Generated Git Tag Script
+This script automates the process of generating Git tags based on the last commit timestamp and branch name, simplifying version control in your Git workflow. This script is ideal for developers familiar with Git.
 
-This shell script simplifies the git tagging process by providing an easy-to-use command for generating and pushing tags to the remote repository. The script enhances efficiency by utilizing the last git commit timestamp for generating the git tag. Additionally, if the current branch is not the main or master branch, it includes the branch name in the generated tag.
-
-## Features
-  * Tag Generation:
-     *   Utilizes the last git commit timestamp for generating tags.
-     *   Includes the branch name in the tag if it is not the main or master branch.
+## Benefits:
+- Reduce errors in manual tag creation.
+- Ensure consistent tag format across branches.
+- Improve traceability between versions.
 
 ## Installation
 
 1. Copy the script to the bin directory:
    *  Linux/Mac:
       ```
-      # Create bin directory if it doesn't exist
-      mkdir -p ~/bin
+      # Create a user-specific bin directory if it doesn't exist
+      mkdir -p ~/.local/bin
       # Copy the script to the bin directory
-      cp tag-helper.sh ~/bin
-      cd ~/bin
-      chmod +x tag-helper.sh
+      cp version_script.sh ~/.local/bin
+      cd ~/.local/bin
+      chmod +x version_script.sh
       ```
 2. Update the command for runtime:
-   * Open your shell configuration file (e.g., ~/.zshrc) using a text editor.
-     ```
-     vim ~/.zshrc
-     ```
+   * Open your shell configuration file (e.g., ~/.zshrc) using a text editor or by below command.
    * Add the following alias to the file:
      ```
-     alias tag=~/bin/tag-helper.sh
+     alias tag=~/bin/version_script.sh
      ```
    * Save the file and source the updated configuration:
      ```
@@ -38,11 +34,18 @@ This shell script simplifies the git tagging process by providing an easy-to-use
 1. Generate and push tags:
    * Once the command helper is configured, you can use the following command from the git repository (main or feature branch):
      ```
-     tag -t true # generates and pushes the tag to the remote repository
+     tag -t true # This generates and pushes the tag to the remote repository.
      ```
    * Use tag -h to get suggestions about the repository.
-2. Example:
-   * Tag helper is being used and updated on one of my repositories, and pushed multiple commits to github <a href="https://github.com/belwals/docker-learning/tags" target="_blank">Repository</a>.
+2. Default behavior: Without the -t option, the script only generates the tag locally and does not push it.
+3. Branch name handling:
+   * Main/Master: Tags will be in the format YYYYMMDDHHMMSS.<commit_hash>
+   * Feature Branch: Tags will be in the format YYYYMMDDHHMMSS.<commit_hash>-<branch_name>
 
+## Customization:
+The script can be customized to modify the tag format or behavior (advanced users).
 
-Feel free to customize the script or the alias according to your preferences. This script enhances the efficiency of managing tags in your Git workflow.
+## Example:
+This script is used in my repository <a href="https://github.com/belwals/docker-learning/tags" target="_blank">ReposDocker Learningitory</a>, to automatically generate tags with each commit and push them to the remote repository, ensuring clear version tracking and traceability.
+
+Feel free to adapt the script and alias to your specific workflow preferences.
