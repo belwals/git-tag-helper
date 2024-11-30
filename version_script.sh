@@ -38,7 +38,7 @@ get_last_git_commits_hash() {
 }
 
 generate_new_version() {
-   version=$(date +"%Y-%m-%dT%H:%M:%S" $LAST_TIME_STAMP)
+   version=$(date +"%Y%m%dT%H%M%S" $LAST_TIME_STAMP)
    if [ "$CURRENT_BRANCH" == "main" ] || [ "$CURRENT_BRANCH" == "master" ]
    then
       # echo "Performing things for master branch"
@@ -54,7 +54,7 @@ process_tagging_with_the_version() {
    echo "Starting tagging process, performing tag on branch: $CURRENT_BRANCH"
    eval "$(git tag $VERSION)"
    echo "Pushing a new tag to remote $VERSION"
-   eval "$(git push origin $VERSION)"
+   eval "$(git push -u origin $VERSION)"
 
 }
 
@@ -79,7 +79,7 @@ main() {
 
    echo "Generated git version: $VERSION with tagging requirement : $IS_TAGGING_NEED_TO_PERFORMED"
 
-   if [ $IS_TAGGING_NEED_TO_PERFORMED == true ] 
+   if [ "$IS_TAGGING_NEED_TO_PERFORMED" == true ] 
    then
       process_tagging_with_the_version "$VERSION"
    fi

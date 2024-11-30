@@ -46,6 +46,6 @@ This script automates the process of generating Git tags based on the last commi
 The script can be customized to modify the tag format or behavior (advanced users).
 
 ## Example:
-This script is used in my repository <a href="https://github.com/belwals/docker-learning/tags" target="_blank">ReposDocker Learningitory</a>, to automatically generate tags with each commit and push them to the remote repository, ensuring clear version tracking and traceability.
+This script is used in my repository <a href="https://github.com/belwals/docker-learning/tags" target="_blank">Docker Learning</a>, to automatically generate tags with each commit and push them to the remote repository, ensuring clear version tracking and traceability.
 
 Feel free to adapt the script and alias to your specific workflow preferences.
