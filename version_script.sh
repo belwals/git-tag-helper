@@ -6,7 +6,7 @@
 #
 # Usage:
 #   - `./version_script.sh`: Generates a version number and prints it to the console.
-#   - `./version_script.sh -t`: Generates a version number and tags the current commit with that version.
+#   - `./version_script.sh -t true`: Generates a version number and tags the current commit with that version.
 #   - `./version_script.sh -h`: Displays help information.
 DEFAULT_VERSION="00000.0"
 LAST_COMMIT_TSP=""
